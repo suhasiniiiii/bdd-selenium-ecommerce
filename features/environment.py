@@ -2,6 +2,7 @@ from selenium import webdriver
 from dotenv import load_dotenv
 import os
 
+
 def before_scenario(context, scenario):
     load_dotenv()
     options = webdriver.ChromeOptions()
