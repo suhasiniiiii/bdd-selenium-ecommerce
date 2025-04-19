@@ -18,8 +18,6 @@ This project demonstrates BDD testing using Behave, Selenium, and Python for cor
 
 ## 🗂 Folder Structure
 - `features/`: Gherkin feature files, step definitions and page object classes
-- `drivers/`: WebDriver setup (e.g., ChromeDriver)
-- `tests/`: Optional direct runners
 - `requirements.txt`: Python packages to install
 
 ## ▶️ How to Run
