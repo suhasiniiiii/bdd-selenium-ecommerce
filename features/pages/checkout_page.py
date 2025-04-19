@@ -5,8 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 class CheckoutPage:
     def __init__(self, driver):
         self.driver = driver
-        # Product-related
-        self.backpack = (By.ID, "item_4_title_link")
+
+        #self.backpack = (By.ID, "item_4_title_link")
         self.add_cart = (By.XPATH, '//*[contains(@id, "add-to-cart")]')
         self.go_cart = (By.XPATH, "/html/body/div/div/div/div[1]/div[1]/div[3]/a")
 
@@ -28,9 +28,10 @@ class CheckoutPage:
     def go_to_cart(self):
         self.driver.find_element(*self.go_cart).click()
 
-    def is_product_in_cart(self, product_name):
+    def is_product_in_cart(self, product):
+        product_xpath = f"//div[contains(@class, 'inventory_item_name') and normalize-space(text())='{product}']"
         product_element = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable(self.backpack)
+            EC.element_to_be_clickable((By.XPATH, product_xpath))
         )
         return product_element is not None
 

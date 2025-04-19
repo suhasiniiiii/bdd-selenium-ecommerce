@@ -1,0 +1,38 @@
+Feature: Checkout process # features/checkout.feature:1
+
+  Scenario Outline: Complete checkout process -- @1.1   # features/checkout.feature:19
+    Given user is on homepage                           # features/steps/search_step.py:13
+    When user selects "Sauce Labs Backpack"             # features/steps/checkout_step.py:13
+    And adds product to the cart                        # features/steps/checkout_step.py:21
+    And selects the cart                                # features/steps/checkout_step.py:25
+    Then the product should be displayed there          # features/steps/checkout_step.py:29
+    When user selects checkout                          # features/steps/checkout_step.py:33
+    And enters first name                               # features/steps/checkout_step.py:37
+    And enters last name                                # features/steps/checkout_step.py:41
+    And enters postal code                              # features/steps/checkout_step.py:45
+    And clicks on continue                              # features/steps/checkout_step.py:49
+    Then the checkout overview should be displayed      # features/steps/checkout_step.py:53
+    When user clicks on finish                          # features/steps/checkout_step.py:57
+    Then the order should be placed successfully        # features/steps/checkout_step.py:61
+
+Feature: Login functionality on SauceDemo eCommerce site # features/login.feature:1
+
+  Scenario: Successful login with valid credentials  # features/login.feature:3
+    Given the user is on the login page              # features/steps/login_step.py:10
+    When the user enter valid username and password  # features/steps/login_step.py:15
+    And the user clicks on login button              # features/steps/login_step.py:21
+    Then the user should be logged in successfully   # features/steps/login_step.py:25
+
+  Scenario: Login with invalid credentials           # features/login.feature:9
+    Given the user is on the login page              # features/steps/login_step.py:10
+    When the user logs in with invalid credentials   # features/steps/login_step.py:29
+    And the user clicks on login button              # features/steps/login_step.py:21
+    Then the login should fail with an error message # features/steps/login_step.py:34
+
+Feature: Search functionality on SauceDemo eCommerce site # features/search.feature:1
+
+  Scenario Outline: Search for a product -- @1.1                       # features/search.feature:10
+    Given user is on homepage                                          # features/steps/search_step.py:13
+    When user searches for "Sauce Labs Backpack"                       # features/steps/search_step.py:23
+    Then products related to "Sauce Labs Backpack" should be displayed # features/steps/search_step.py:28
+
