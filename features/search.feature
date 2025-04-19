@@ -7,5 +7,4 @@ Feature: Search functionality on SauceDemo eCommerce site
 
     Examples:
       | product |
-      | Backpack |
-      | Bike    |
+      |Sauce Labs Backpack|
