@@ -17,8 +17,7 @@ This project demonstrates BDD testing using Behave, Selenium, and Python for cor
 - Checkout flow (add to cart, place order)
 
 ## 🗂 Folder Structure
-- `features/`: Gherkin feature files and step definitions
-- `pages/`: Page Object classes for modular and reusable code
+- `features/`: Gherkin feature files, step definitions and page object classes
 - `drivers/`: WebDriver setup (e.g., ChromeDriver)
 - `tests/`: Optional direct runners
 - `requirements.txt`: Python packages to install
